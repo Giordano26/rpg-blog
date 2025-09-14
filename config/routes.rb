@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "home_page#index"
+  root "homepage#index"
 
-  resources :blog_posts, only: [ :show ], param: :id
+  resources :blog_posts, only: [ :show ], param: :id, path: "posts"
 end
