@@ -1,3 +1,11 @@
+/*
+ *= require_self
+ *= require homepage
+ *= require navbar
+ *= require blog_posts
+ *= require_tree .
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
