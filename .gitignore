@@ -36,3 +36,6 @@
 #ignore posts folder
 /app/posts/*.md
 
+#idea
+.idea
+
