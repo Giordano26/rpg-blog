@@ -4,10 +4,9 @@
     <p>Nenhum post encontrado.</p>
   <% else %>
     <% @grouped_blogposts.sort.reverse.to_h.each do |year, months| %>
-      <h2><%= year %></h2>
-      <% months.each do |month, posts| %>
-        <h3><%= month.capitalize %></h3>
-        <ul> 
+      <% months.each do |month_name, posts| %>
+        <h2><%= year %> - <%= month_name.capitalize %></h2>
+        <ul>
           <% posts.each do |post| %>
             <li>
               <%= link_to post.title, blog_post_path(post) %>
