@@ -13,8 +13,8 @@
       </div>
     </header>
 
-    <div class="post-content">
-       <%= @blog_post.html_content %> 
-    </div>
+   <div class="post-content">
+    <%= process_blog_content(@blog_post.raw_content) %>
+   </div>
   </article>
 </div>
