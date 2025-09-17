@@ -2,6 +2,8 @@ require "redcarpet"
 require "yaml"
 
 class BlogPost
+  include ActionView::Helpers::AssetUrlHelper
+
   attr_reader :id, :title, :date, :draft, :description, :tags, :categories, :content
 
   def initialize(file_path)
@@ -32,9 +34,10 @@ class BlogPost
   end
 
   def html_content
+    erb_processed_content = ERB.new(content).result(binding)
     renderer = Redcarpet::Render::HTML.new(prettify: true)
     markdown = Redcarpet::Markdown.new(renderer, extensions = { fenced_code_blocks: true })
-    markdown.render(@content).html_safe
+    markdown.render(erb_processed_content).html_safe
   end
 
   def to_param
