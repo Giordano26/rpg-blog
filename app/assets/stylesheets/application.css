@@ -3,6 +3,7 @@
  *= require homepage
  *= require navbar
  *= require blog_posts
+ *= require about
  *= require_tree .
  */
 
