@@ -12,7 +12,23 @@
         <% end %>
       </div>
     </header>
-
+    
+    <% if @blog_post.has_downloads? %>
+      <div class="download-section alert alert-info mb-4">
+        <h5>📥 Downloads Disponíveis</h5>
+        <div class="download-buttons">
+          <% @blog_post.download_files.each do |file| %>
+            <%= link_to blog_post_download_path(@blog_post, file['filename']), 
+                class: "btn btn-outline-primary me-2 mb-2 d-inline-flex align-items-center",
+                title: "Download #{file['name']}" do %>
+              📁 <%= file['name'] %>
+              <small class="ms-2 text-muted">(<%= format_file_size(file['size']) %>)</small>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    
    <div class="post-content">
     <%= process_blog_content(@blog_post.raw_content) %>
    </div>

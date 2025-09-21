@@ -56,3 +56,12 @@
 .post-page a:hover {
   text-decoration: underline;
 }
+
+.download-section {
+  border-left: 4px solid #0d6efd;
+  background-color: #f8f9fa;
+}
+
+.download-buttons .btn {
+  margin-bottom: 0.5rem;
+}
